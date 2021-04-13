@@ -1,14 +1,10 @@
-// import document from "document";
-const document = require("document")
-let demo = document.getElementById("demo");
-demo.text = "Hello World!";
+import * as messaging from "messaging";
 
-// import * as messaging from "messaging";
-const { messaging } = require("messaging");
+var i = 0
 
 // Listen for the onopen event
 messaging.peerSocket.onopen = function() {
-    messaging.peerSocket.send("Hi, im the fitbit Device!");
+    messaging.peerSocket.send("Hi, from Fitbit device!");
 }
   
 // Listen for the onmessage event
@@ -20,3 +16,11 @@ messaging.peerSocket.onmessage = function(evt) {
 messaging.peerSocket.onerror = function(err) {
     console.log(err);
 }
+
+// Speaking
+function speaking(){
+  messaging.peerSocket.send(i);
+  i += 1
+}
+
+setInterval(speaking, 1000);
