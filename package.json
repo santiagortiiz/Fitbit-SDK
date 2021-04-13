@@ -1,0 +1,25 @@
+{
+  "name": "device-companion-communication",
+  "version": "1.0.0",
+  "description": "Set the communication between de Fitbit device and the companion app",
+  "main": "/app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santiagortiiz/sdk-device-companion-communication.git"
+  },
+  "keywords": [
+    "Fitbit",
+    "Messaging",
+    "Communication",
+    "SDK"
+  ],
+  "author": "Santiago Ortiz Ceballos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/santiagortiiz/sdk-device-companion-communication/issues"
+  },
+  "homepage": "https://github.com/santiagortiiz/sdk-device-companion-communication#readme"
+}
