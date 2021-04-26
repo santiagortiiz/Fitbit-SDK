@@ -23,4 +23,4 @@ function speaking(){
   i += 1
 }
 
-setInterval(speaking, 1000);
+// setInterval(speaking, 1000);

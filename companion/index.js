@@ -1,16 +1,21 @@
-import * as messaging from "messaging";
+// import * as messaging from "messaging"
+// import { me as companion } from "companion"
 
-// Listen for the onopen event
-messaging.peerSocket.onopen = function() {
-    messaging.peerSocket.send("Hi, from companion!");
-}
-  
-// Listen for the onmessage event
-messaging.peerSocket.onmessage = function(evt) {
-    console.log(`Speaking between device and companion: ${evt.data}`);
-}
+const myHeaders = new Headers({'Content-Type': 'application/json'})
+const API = 'https://rickandmortyapi.com/api/character/1'
 
-// Listen for the onerror event
-messaging.peerSocket.onerror = function(err) {
-    console.log(err);
-}
+console.log("BEFORE")
+fetch(API, {
+    method : "GET",
+    headers : myHeaders
+}) 
+    .then( response => {
+        return response.json()
+    })
+    .then( data => {
+        console.log(data)
+    })
+    .catch ((err) => {
+        console.error(err)
+    })
+console.log("AFTER")
