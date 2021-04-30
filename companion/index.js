@@ -14,3 +14,29 @@ messaging.peerSocket.onmessage = function(evt) {
 messaging.peerSocket.onerror = function(err) {
     console.log(err);
 }
+
+console.log("COMPANION\n")
+const myHeaders = new Headers({'Content-Type': 'application/json'})
+const obj = {
+    name: "HR",
+    price: "100",
+    tags: ["red", "expensive"]
+}
+
+const API = 'http://localhost:8000/api/products/'
+console.log("BEFORE")
+fetch(API, {
+    method: "POST",
+    headers: myHeaders,
+    body: JSON.stringify(obj)
+})
+    .then( response => {
+        return response.json()
+    })
+    .then( data => {
+        console.log(data)
+    })
+    .catch ((err) => {
+        console.error(err)
+    })
+console.log("AFTER")
